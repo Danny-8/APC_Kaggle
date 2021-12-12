@@ -27,20 +27,20 @@ Hemos reducido considerablemente la cantidad de clases, lo que las proporciones 
 Podemos ver como sí que tiene más correlación este nuevo atributo, aun que sea gracias a que se reduce la classificación
 
 ### Modelo
-| Modelo | Target | Hiperparametros | Métrica | Tiempo |
-| -- | -- | -- | -- |
-| Logistic regression | Style | C=10 | 5% | 100ms |
-| Logistic regression | GenericStyle | C=1 | 27% | 100ms |
-| -- | -- | -- | -- |
-| Random Forest | Style | n_estimators=200, min_samples_leaf=1 | 15% | 100ms |
-| Random Forest | GenericStyle | n_estimators=100, min_samples_leaf=1 | 45% | 100ms |
-| -- | -- | -- | -- |
-| Decision Tree | Style | criterion='gini' | 10% | 100ms |
-| Decision Tree | GenericStyle | criterion='entropy' | 38% | 100ms |
-| -- | -- | -- | -- |
-| Ada Boost | Style | n_estimators=100 | 0.8% | 100ms |
-| Ada Boost | GenericStyle | n_estimators=100 | 36% | 100ms |
-
+| Modelo | Target | Hiperparametros | Métrica | Tiempo |  
+  
+| Logistic regression | Style | C=10 | 5% | 7min |  
+| Logistic regression | GenericStyle | C=1 | 27% | 7min |  
+  
+| Random Forest | Style | n_estimators=200, min_samples_leaf=1 | 15% | 20min |  
+| Random Forest | GenericStyle | n_estimators=100, min_samples_leaf=1 | 45% | 20min |  
+  
+| Decision Tree | Style | criterion='gini' | 10% | 40s |  
+| Decision Tree | GenericStyle | criterion='entropy' | 38% | 40s |  
+  
+| Ada Boost | Style | n_estimators=100 | 0.8% | 3min |  
+| Ada Boost | GenericStyle | n_estimators=100 | 36% | 3min |  
+  
 
 ## Conclusiones
 El mejor modelo para nuestros dos targets ha estado el Random Forest.
@@ -50,4 +50,4 @@ Por ello, los modelos entrenados con el target GenericStyle que reduce las clase
 Viendo las matrices de confusión vemos que no destaca ninguna clasificación en concreto, ya que en la mayoría tienen un número medio elevado de fallos aunque acierte gran parte, entonces los resultados obtenidos los atribuiremos a la correlación de las variables, que como hemos visto, con nuestros target es practicamente mínima.
 
 ## Ideas para trabajar en el futuro
-Crec que seria interesant indagar més en 
+Aplicar algún método de ensemble para los modelos, o trabajar con otro tipo de distribución a la hora de classificar, como la de GenericStyle
